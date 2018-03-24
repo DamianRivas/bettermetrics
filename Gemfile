@@ -27,6 +27,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0'
 # Using Bootstrap 4 requires jQuery
 gem 'jquery-rails'
+# Use devise for authentication
+gem 'devise'
+# Use Figaro for environment variables
+gem 'figaro', '1.1.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -51,8 +55,8 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  # gem 'spring'
+  # gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :production do
