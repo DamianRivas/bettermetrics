@@ -1,0 +1,17 @@
+<div class="container">
+  <section class="header">
+    <h1>My Apps</h1>
+  </section>
+  <div class="row">
+    <div class="col-8">
+      <ul>
+        <% @registered_applications.each do |app| %>
+          <li><%= link_to app.name, user_registered_application_path(current_user, app) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-4">
+      <%= link_to "New", new_user_registered_application_path, class: "btn btn-success" %>
+    </div>
+  </div>
+</div>

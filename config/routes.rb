@@ -1,5 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
+
+  devise_scope :user do
+    get "/sign_up" => "devise/registrations#new", as: "new_user_registration" # custom path to sign_up/registration
+  end
+  devise_for :users, path: 'account', skip: [:sessions], path_names: { edit: 'settings' }
+  as :user do
+    get 'signin', to: 'devise/sessions#new', as: :new_user_session
+    post 'signin', to: 'devise/sessions#create', as: :user_session
+    delete 'signout', to: 'devise/sessions#destroy', as: :destroy_user_session
+  end
+
+  resources :users, path: 'account', only: [] do
+    resources :registered_applications
+  end
 
   root 'welcome#index'
 
