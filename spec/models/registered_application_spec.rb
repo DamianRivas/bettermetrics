@@ -5,6 +5,7 @@ RSpec.describe RegisteredApplication, type: :model do
   let(:app) { create(:registered_application, user: user) }
 
   it { should belong_to(:user) }
+  it { should have_many(:events) }
 
   it { should validate_presence_of(:name) }
 

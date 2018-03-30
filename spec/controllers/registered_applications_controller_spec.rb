@@ -4,6 +4,7 @@ require 'faker'
 RSpec.describe RegisteredApplicationsController, type: :controller do
   let(:user) { create(:user) }
   let(:app) { create(:registered_application, user: user) }
+  let(:event) { create(:event, registered_application: app) }
   let(:other_user) { create(:user) }
   let(:other_app) { create(:registered_application, user: other_user) }
 
@@ -57,6 +58,12 @@ RSpec.describe RegisteredApplicationsController, type: :controller do
         get :show, params: { id: app.id, user_id: user.id }
 
         expect(assigns(:registered_application)).to eq(app)
+      end
+
+      it "assigns events belonging to itself to @events" do
+        get :show, params: { id: app.id, user_id: user.id }
+
+        expect(assigns(:events)).to eq ({"#{app.name}": 1 })
       end
     end
   end
