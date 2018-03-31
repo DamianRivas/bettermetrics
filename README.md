@@ -2,6 +2,14 @@
 
 Analytics webapp built with Ruby on Rails
 
+## Register Your Application
+
+When you register you website/webapp, you may want to follow the following format exactly, without a backslash "`/`" at the end.
+
+`http://localhost:3001`
+
+`https://www.example.com`
+
 ## Run the API
 
 An easy way to test the API is to send a request with AJAX like the following:
