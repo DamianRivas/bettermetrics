@@ -17,7 +17,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -32,6 +31,10 @@ gem 'jquery-rails'
 gem 'devise'
 # Use Figaro for environment variables
 gem 'figaro', '1.1.1'
+# Use Chartkick to create graphs for data.
+gem 'chartkick'
+# Use Groupdate to create a line chart of events over time
+gem 'groupdate'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -43,7 +46,7 @@ gem 'figaro', '1.1.1'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3'
+  gem 'pg'
   gem 'rspec-rails', '~> 3.7'
   gem 'rails-controller-testing'
   gem 'shoulda'

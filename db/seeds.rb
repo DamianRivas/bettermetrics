@@ -31,10 +31,12 @@ end
 apps = RegisteredApplication.all
 
 10000.times do
-  Event.create!(
+  event = Event.create!(
     name: Faker::Hacker.verb,
     registered_application: apps.sample
   )
+  event.created_at = (rand*10).days.ago
+  event.save!
 end
 
 User.first.update({email: "drivas1993@gmail.com"})
